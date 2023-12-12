@@ -1,0 +1,161 @@
+name: Autograding
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  testBook:
+    name: Test Book Class
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Build with Gradle
+      run: ./gradlew build -x test
+
+    - name: Run Book tests
+      run: ./gradlew test --tests "com.example.BookTest"
+
+  testLibrary:
+    name: Test Library Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run Library tests
+        run: ./gradlew test --tests "com.example.LibraryTest"
+
+  testEmployee:
+    name: Test Employee Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run Employee tests
+        run: ./gradlew test --tests "com.example.EmployeeTest"
+
+  testDepartment:
+    name: Test Department Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run Department tests
+        run: ./gradlew test --tests "com.example.DepartmentTest"
+
+  testProduct:
+    name: Test Product Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run Product tests
+        run: ./gradlew test --tests "com.example.ProductTest"
+
+  testShoppingCart:
+    name: Test ShoppingCart Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run ShoppingCart tests
+        run: ./gradlew test --tests "com.example.ShoppingCartTest"
+
+  testPassenger:
+    name: Test Passenger Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run Passenger tests
+        run: ./gradlew test --tests "com.example.PassengerTest"
+  
+  testFlight:
+    name: Test Flight Class
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+  
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+  
+      - name: Run Flight tests
+        run: ./gradlew test --tests "com.example.FlightTest"
+
