@@ -8,7 +8,6 @@ public class APCalendar {
 
     // Method to implement (a)
     public static int numberOfLeapYears(int year1, int year2) {
-        return 1;
         // Your implementation here
     }
 
@@ -44,7 +43,6 @@ public class APCalendar {
 
     // Method to implement (b)
     public static int dayOfWeek(int month, int day, int year) {
-        return 1;
         // Your implementation here
     }
 
